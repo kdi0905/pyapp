@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request,redirect
 import pymysql
-conn = pymysql.connect(host='localhost',port=3306,db='pyapp',user='root',passwd='java1004')
+conn = pymysql.connect(host='kdi0905.kro.kr',port=3306,db='pyapp',user='root',passwd='java1004')
 #print(conn)
 app = Flask(__name__)
 
