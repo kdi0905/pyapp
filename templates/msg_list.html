@@ -1,0 +1,55 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+.navBg{
+    background-color: #D5D5D5;
+}
+body{
+    background-color: #EAEAEA;
+    margin: auto;
+    background-size: cover; 
+}
+
+</style>
+<html>
+    <head>
+    </head>
+    <body>
+        <nav class="navbar navBg navbar-expand-sm">
+            <div class=" text-center" >
+            <ul class="navbar-nav" >
+                <li class="nav-item"><a class="nav-link text-secondary text-left" style="font-size: 30px; " href="/">python</a></li>
+                <li class="nav-item"><a class="nav-link text-secondary " style="font-size:20px;  " href="/">list</a></li>
+                <li class="nav-item"><a class="nav-link text-secondary " style="font-size:20px; " href="/add_msg">add</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 class="text-center">msg_list</h1>
+            <table class="table table-border text-center" style="width: 70%; margin: auto;">
+                <thead class="bg-secondary">
+                    <tr>
+                        <th>msg_id</th>
+                        <th>msg_text</th>
+                        <th>삭제</th>
+                        <th>수정</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in msgList %}
+                        <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td><a class="text-secondary" href="/del_msg?msg_id={{row[0]}}">삭제</a></td>
+                        <td><a class="text-secondary" href="/update_msg?msg_id={{row[0]}}">수정</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+                <div class="text-center">
+                    <a class="btn btn-secondary" style="margin-top: 20px; " href="/add_msg">msg입력</a>
+                </div>
+        </div>
+    </body>
+</html>
