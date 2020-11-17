@@ -59,4 +59,4 @@ def update_msg():
         conn.commit()
         return redirect('/')
 
-app.run(host='localhost',port=80)
+app.run(host='0.0.0.0',port=8888)
